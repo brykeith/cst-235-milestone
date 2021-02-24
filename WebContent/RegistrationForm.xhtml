@@ -9,19 +9,20 @@
 <h:body>
 	<h3>Registration</h3>
 	<h:form>
-First Name:<h:inputText value="" />
+First Name:<h:inputText value="#{user.firstName}" />
 		<br></br>
-Last Name:<h:inputText value="" />
+Last Name:<h:inputText value="#{user.lastName}" />
 		<br></br>
-Email Address:<h:inputText value="" />
+Email Address:<h:inputText value="#{user.emailAddress}" />
 		<br></br>
-Phone Number:<h:inputText value="" />
+Phone Number:<h:inputText value="#{user.phoneNumber}" />
 		<br></br>
-Username:<h:inputText value="" />
+Username:<h:inputText value="#{user.userName}" />
 		<br></br>
-Password:<h:inputText value="" />
+Password:<h:inputText value="#{user.password}" />
 		<br></br>
-		<h:commandButton action="index.html" value="Submit" />
+		<h:commandButton action="#{registrationFormController.onSubit()}"
+			value="Register" />
 	</h:form>
 </h:body>
 </html>

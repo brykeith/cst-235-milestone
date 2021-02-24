@@ -1,7 +1,10 @@
 package beans;
 
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean
 public class User {
-	
+
 	// Registration details at a minimum should include First Name, Last Name, Email
 	// Address, Phone Number, and Login Credentials (Username and Password).
 
