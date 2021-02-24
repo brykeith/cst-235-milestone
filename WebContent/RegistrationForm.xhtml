@@ -8,18 +8,18 @@
 
 <h:body>
 	<h3>Registration</h3>
-	<h:form>
-First Name:<h:inputText value="#{user.firstName}" />
+	<h:form name="registration">
+First Name:<h:inputText required="true" value="#{user.firstName}" />
 		<br></br>
-Last Name:<h:inputText value="#{user.lastName}" />
+Last Name:<h:inputText required="true" value="#{user.lastName}" />
 		<br></br>
 Email Address:<h:inputText value="#{user.emailAddress}" />
 		<br></br>
 Phone Number:<h:inputText value="#{user.phoneNumber}" />
 		<br></br>
-Username:<h:inputText value="#{user.userName}" />
+Username:<h:inputText required="true" value="#{user.userName}" />
 		<br></br>
-Password:<h:inputText value="#{user.password}" />
+Password:<h:inputText required="true" value="#{user.password}" />
 		<br></br>
 		<h:commandButton action="#{registrationFormController.onSubit()}"
 			value="Register" />
