@@ -29,7 +29,7 @@ public class UserController {
 		System.out.println(users.get(0).getFirstName());
 		u.setUsers(users);
 
-		// will likely be return "LoginForm.xhtml";
+		// will likely return "LoginForm.xhtml";
 		return "";
 	}
 
