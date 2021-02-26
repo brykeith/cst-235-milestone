@@ -7,7 +7,7 @@ import beans.User;
 
 @ManagedBean
 public class RegistrationFormController {
-	public String onSubit() {
+	public String onSubmit() {
 
 		FacesContext context = FacesContext.getCurrentInstance();
 		User user = context.getApplication().evaluateExpressionGet(context, "#{user}", User.class);
