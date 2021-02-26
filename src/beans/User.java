@@ -10,8 +10,30 @@ public class User {
 
 	private String firstName;
 	private String lastName;
+	private String userName;
+	private String password;
 	private String emailAddress;
 	private String phoneNumber;
+
+	public User() {
+		this.firstName = this.getFirstName();
+		this.lastName = this.getLastName();
+		this.userName = this.getUserName();
+		this.password = this.getPassword();
+		this.emailAddress = this.getEmailAddress();
+		this.phoneNumber = this.getPhoneNumber();
+	}
+
+	public User(String firstName, String lastName, String userName, String password, String emailAddress,
+			String phoneNumber) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		this.emailAddress = emailAddress;
+		this.phoneNumber = phoneNumber;
+
+	}
 
 	public String getFirstName() {
 		return firstName;
@@ -59,14 +81,6 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	private String userName;
-	private String password;
-
-	public User() {
-		// TODO Auto-generated constructor stub
-
 	}
 
 }
