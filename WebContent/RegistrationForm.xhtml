@@ -1,29 +1,38 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+    
 <h:head>
 	<!-- shows on browser tab -->
 	<title>Movie Rental Registration</title>
 </h:head>
 
+
+
 <h:body>
-	<h3>Registration</h3>
-	<h:form name="registration">
-First Name:<h:inputText required="true" value="#{user.firstName}" />
-		<br></br>
-Last Name:<h:inputText required="true" value="#{user.lastName}" />
-		<br></br>
-Email Address:<h:inputText value="#{user.emailAddress}" />
-		<br></br>
-Phone Number:<h:inputText value="#{user.phoneNumber}" />
-		<br></br>
-Username:<h:inputText required="true" value="#{user.userName}" />
-		<br></br>
-Password:<h:inputText required="true" value="#{user.password}" />
-		<br></br>
-		<h:commandButton action="#{registrationFormController.onSubmit()}"
-			value="Register" />
-	</h:form>
+	<ui:composition template="/layouts/commonLayout.xhtml">
+		<ui:define name="content">
+			<h3>Registration</h3>
+			<h:form name="registration">
+				First Name:<h:inputText required="true" value="#{user.firstName}" />
+				<br></br>
+				Last Name:<h:inputText required="true" value="#{user.lastName}" />
+				<br></br>
+				Email Address:<h:inputText value="#{user.emailAddress}" />
+				<br></br>
+				Phone Number:<h:inputText value="#{user.phoneNumber}" />
+				<br></br>
+				Username:<h:inputText required="true" value="#{user.userName}" />
+				<br></br>
+				Password:<h:inputText required="true" value="#{user.password}" />
+				<br></br>
+				<h:commandButton action="#{registrationFormController.onSubmit()}"
+					value="Register" />
+			</h:form>
+		</ui:define>
+	</ui:composition>
 </h:body>
 </html>
 
