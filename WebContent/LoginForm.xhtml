@@ -7,15 +7,21 @@
 	<h:body>
 	<ui:composition template="/layouts/commonLayout.xhtml">
 		<ui:define name="content">
-			<h3>Login</h3>
-			<h:form name="login">
-				Username:<h:inputText required="true" value="#{user.userName}" />
-				<br></br>
-				Password:<h:inputText required="true" value="#{user.password}" />
-				<br></br>
-				<h:commandButton action="#{loginFormController.onSubmit()}"
-					value="Login" />
-			</h:form>
+			<div class="full-wrapper">
+				<div class="form-container">
+					<div id="registerForm" class="login-page-form">
+						<h3 class="login-page-form-title">Sign In</h3>
+						<h:form name="login">
+							Username:<h:inputText required="true" value="#{user.userName}" />
+							<br></br>
+							Password:<h:inputText required="true" value="#{user.password}" />
+							<br></br>
+							<h:commandButton class="submit-button" action="#{loginFormController.onSubmit()}"
+								value="Login" />
+						</h:form>
+					</div>
+				</div>
+			</div>
 		</ui:define>
 	</ui:composition>
 </h:body>

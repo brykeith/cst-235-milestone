@@ -7,23 +7,29 @@
 <h:body>
 	<ui:composition template="/layouts/commonLayout.xhtml">
 		<ui:define name="content">
-			<h3>Registration</h3>
-			<h:form name="registration">
-				First Name:<h:inputText required="true" value="#{user.firstName}" />
-				<br></br>
-				Last Name:<h:inputText required="true" value="#{user.lastName}" />
-				<br></br>
-				Email Address:<h:inputText value="#{user.emailAddress}" />
-				<br></br>
-				Phone Number:<h:inputText value="#{user.phoneNumber}" />
-				<br></br>
-				Username:<h:inputText required="true" value="#{user.userName}" />
-				<br></br>
-				Password:<h:inputText required="true" value="#{user.password}" />
-				<br></br>
-				<h:commandButton action="#{registrationFormController.onSubmit()}"
-					value="Register" />
-			</h:form>
+			<div class="full-wrapper">
+				<div class="form-container">
+					<div id="loginForm" class="login-page-form">
+						<h3 class="login-page-form-title">Register</h3>
+						<h:form name="registration">
+							First Name:<h:inputText required="true" value="#{user.firstName}" />
+							<br></br>
+							Last Name:<h:inputText required="true" value="#{user.lastName}" />
+							<br></br>
+							Email Address:<h:inputText value="#{user.emailAddress}" />
+							<br></br>
+							Phone Number:<h:inputText value="#{user.phoneNumber}" />
+							<br></br>
+							Username:<h:inputText required="true" value="#{user.userName}" />
+							<br></br>
+							Password:<h:inputText required="true" value="#{user.password}" />
+							<br></br>
+							<h:commandButton class="submit-button" action="#{registrationFormController.onSubmit()}"
+								value="Register" />
+						</h:form>
+					</div>
+				</div>
+			</div>
 		</ui:define>
 	</ui:composition>
 </h:body>
