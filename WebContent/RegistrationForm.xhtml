@@ -2,28 +2,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:ui="http://java.sun.com/jsf/facelets">
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
     
 <h:body>
 	<ui:composition template="/layouts/commonLayout.xhtml">
 		<ui:define name="content">
-			<div class="full-wrapper">
+			<div class="full-wrapper registration-page">
 				<div class="form-container">
 					<div id="loginForm" class="login-page-form">
-						<h3 class="login-page-form-title">Register</h3>
+						<h3 class="login-page-form-title form-title">Register</h3>
 						<h:form name="registration">
-							First Name:<h:inputText required="true" value="#{user.firstName}" />
-							<br></br>
-							Last Name:<h:inputText required="true" value="#{user.lastName}" />
-							<br></br>
-							Email Address:<h:inputText value="#{user.emailAddress}" />
-							<br></br>
-							Phone Number:<h:inputText value="#{user.phoneNumber}" />
-							<br></br>
-							Username:<h:inputText required="true" value="#{user.userName}" />
-							<br></br>
-							Password:<h:inputText required="true" value="#{user.password}" />
-							<br></br>
+							<div class="form-input-label">First Name:</div>
+							<h:inputText required="true" value="#{user.firstName}" a:placeholder="First Name" />
+							<div class="form-input-label">Last Name:</div>
+							<h:inputText required="true" value="#{user.lastName}" a:placeholder="Last Name" />
+							<div class="form-input-label">Email:</div>
+							<h:inputText value="#{user.emailAddress}" a:placeholder="Email Address" />
+							<div class="form-input-label">Phone Number:</div>
+							<h:inputText value="#{user.phoneNumber}" a:placeholder="Phone Number" />
+							<div class="form-input-label">Username:</div>
+							<h:inputText required="true" value="#{user.userName}" a:placeholder="Username" />
+							<div class="form-input-label">Password:</div>
+							<h:inputText required="true" value="#{user.password}" a:placeholder="Password" />
+							
 							<h:commandButton class="submit-button" action="#{registrationFormController.onSubmit()}"
 								value="Register" />
 						</h:form>

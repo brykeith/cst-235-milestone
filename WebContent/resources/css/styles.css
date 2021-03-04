@@ -24,23 +24,58 @@ html {
 }
 
 body {
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-image: linear-gradient(
-      to bottom right,
-      rgba(255, 255, 255, 0.2),
-      rgba(97, 217, 222, 0.2)
-    ),
-    url("../images/summer.jpg");
+  
    width: 100%;
    height: 100%;
+}
+
+.login-page{
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	background-image: linear-gradient(
+	    to bottom right,
+	    rgba(255, 255, 255, 0.2),
+	    rgba(97, 217, 222, 0.2)
+		),
+		url("../images/summer.jpg");
+}
+
+.registration-page{
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	background-image: linear-gradient(
+	    to bottom right,
+	    rgba(255, 255, 255, 0.2),
+	    rgba(97, 217, 222, 0.2)
+		),
+		url("../images/summer.jpg");
+}
+
+.new-movie-page{
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	background-image: linear-gradient(
+	    to bottom right,
+	    rgba(255, 255, 255, 0.2),
+	    rgba(97, 217, 222, 0.2)
+		),
+		url("../images/theatre.jpg");
 }
 
 form {
   text-align: center;
   height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 #page{
@@ -69,6 +104,13 @@ form {
 	transform: translateX(-50%);
 	display: inline-block;
 	color: #383536;
+	width: 300px;
+}
+
+.header-logo{
+	position: absolute;
+	top: 10px;
+	left: -1px;
 	width: 300px;
 }
 
@@ -102,23 +144,32 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
+
 }
 
-.login-page-form-title {
+.form-title {
   text-align: center;
   color: #383536;
-  font-size: 48px;
+  font-size: 36px;
   width: 100%;
-  padding: 20px 0 30px;
+  padding: 0px 0 20px;
+}
+
+.form-input-label{
+	font-size: 0.8rem;
+	width: 250px;
+	text-align: left;
+	margin: 10px 0 3px 0;
+	font-weight: bold;
 }
 
 .login-page-form input[type="text"],
 .login-page-form input[type="password"],
 .login-page-form input[type="email"] {
   width: 250px;
-  height: 35px;
+  height: 30px;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 2px;
@@ -126,15 +177,13 @@ form {
   font-family: "Exo", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  padding: 4px;
-  margin: 10px 0;
   box-shadow: 0 0 .2rem 0 rgba(0, 0, 0, 0.3);
 }
 
 .login-page-form input[type="text"]:focus,
 .login-page-form input[type="password"]:focus,
 .login-page-form input[type="email"]:focus {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in;
   outline: none;
   border: 1px solid rgba(255, 255, 255, 1);
   box-shadow: 0 0 .3rem 0 rgba(0, 0, 0, 0.5);
@@ -151,8 +200,7 @@ form {
   font-family: "Exo", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  padding: 6px;
-  margin: 10px 0 10px 0;
+  margin-top: 30px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -171,8 +219,17 @@ form {
   .login-page-form input[type="email"],
   .login-page-form input {
     width: 325px;
-    height: 40px;
   }
+  
+	.form-input-label{
+
+	width: 325px;
+
+	}
+	
+	.form-title {
+	  font-size: 48px;
+	}
 }
 
 

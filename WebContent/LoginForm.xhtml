@@ -2,20 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 
 	<h:body>
 	<ui:composition template="/layouts/commonLayout.xhtml">
 		<ui:define name="content">
-			<div class="full-wrapper">
+			<div class="full-wrapper login-page">
 				<div class="form-container">
 					<div id="registerForm" class="login-page-form">
-						<h3 class="login-page-form-title">Sign In</h3>
+						<h3 class="login-page-form-title form-title">Sign In</h3>
 						<h:form name="login">
-							Username:<h:inputText required="true" value="#{user.userName}" />
-							<br></br>
-							Password:<h:inputText required="true" value="#{user.password}" />
-							<br></br>
+							<div class="form-input-label">Username:</div>
+							<h:inputText required="true" value="#{user.userName}" a:placeholder="Username"/>
+							<div class="form-input-label">Password:</div>							
+							<h:inputText required="true" value="#{user.password}" a:placeholder="Password"/>
 							<h:commandButton class="submit-button" action="#{loginFormController.onSubmit()}"
 								value="Login" />
 						</h:form>
