@@ -15,7 +15,7 @@ public class UserController {
 		FacesContext context = FacesContext.getCurrentInstance();
 		User user = context.getApplication().evaluateExpressionGet(context, "#{user}", User.class);
 
-		// for testing
+// 		for testing
 //		System.out.println("first name: " + user.getFirstName());
 //		System.out.println("last name: " + user.getLastName());
 //		System.out.println("username: " + user.getUserName());
