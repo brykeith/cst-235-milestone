@@ -25,7 +25,7 @@ public class NewMovieFormController {
 		FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("movie", m);
 
 		// shows response page
-		return " ";
+		return "NewMovieResponse.xhtml";
 
 	}
 }
