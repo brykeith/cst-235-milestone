@@ -14,10 +14,10 @@ public class RegistrationFormController {
 		FacesContext context = FacesContext.getCurrentInstance();
 		User user = context.getApplication().evaluateExpressionGet(context, "#{user}", User.class);
 
-		//adding user to DB
+		// adding user to DB
 		DatabaseService ds = new DatabaseService();
 		ds.insertOne(user);
-		
+
 		// use for testing
 		System.out.println(user.getFirstName());
 
@@ -27,10 +27,6 @@ public class RegistrationFormController {
 		// shows response page
 		return "RegistrationResponse.xhtml";
 
-	}
-
-	public RegistrationFormController() {
-		// TODO Auto-generated constructor stub
 	}
 
 }
