@@ -9,7 +9,7 @@ import beans.User;
 
 @ManagedBean
 public class RegistrationFormController {
-	public String onSubmit() throws SQLException {
+	public String onSubmit() throws SQLException, ClassNotFoundException {
 
 		FacesContext context = FacesContext.getCurrentInstance();
 		User user = context.getApplication().evaluateExpressionGet(context, "#{user}", User.class);

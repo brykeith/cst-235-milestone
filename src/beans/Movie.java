@@ -6,22 +6,22 @@ import javax.faces.bean.ManagedBean;
 public class Movie {
 
 	public String title;
-	public String director;
+	//public String director;
 	public String duration;
 	public String releaseDate;
 	public String contentRating; // this is the audience rating. Example: R, PG, PG-13
 
 	public Movie() {
 		this.title = this.getTitle();
-		this.director = this.getDirector();
+		//this.director = this.getDirector();
 		this.duration = this.getDuration();
 		this.releaseDate = this.getReleaseDate();
 		this.contentRating = this.getContentRating();
 	}
 
-	public Movie(String title, String director, String duration, String releaseDate, String contentRating) {
+	public Movie(String title, String duration, String releaseDate, String contentRating) {
 		this.title = title;
-		this.director = director;
+		//this.director = director;
 		this.duration = duration;
 		this.releaseDate = releaseDate;
 		this.contentRating = contentRating;
@@ -35,7 +35,7 @@ public class Movie {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
+/*
 	public String getDirector() {
 		return director;
 	}
@@ -43,7 +43,7 @@ public class Movie {
 	public void setDirector(String director) {
 		this.director = director;
 	}
-
+*/
 	public String getDuration() {
 		return duration;
 	}

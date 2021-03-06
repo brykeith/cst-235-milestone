@@ -5,13 +5,22 @@
       xmlns:h="http://java.sun.com/jsf/html">
 
 	<h:body>
-
 		<ui:composition template="/layouts/commonLayout.xhtml">
 			<ui:define name="content">
-				<h3>Sign in successful!</h3>
-				<p>Your username is #{user.userName}</p>
+				<div class="full-wrapper new-movie-page">
+					<div class="form-container">
+						<div id="new-movie-form" class="login-page-form">
+							<h3 class="new-movie-form-title form-title">Welcome #{user.userName}!</h3>
+								<h:form name="menu">
+									<h:commandButton class="submit-button" action="NewMovieForm.xhtml"
+										value="Add Movie" />
+									<h:commandButton class="submit-button" action="MovieList.xhtml"
+										value="Show All Movies" />
+								</h:form>
+						</div>
+					</div>
+				</div>
 			</ui:define>
 		</ui:composition>
-
 	</h:body>
 </html>

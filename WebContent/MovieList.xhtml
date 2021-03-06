@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<head>
+	
+		<style>
+			.order-table{
+				border:1px black solid;
+			}
+			
+			.order-table-odd{
+				background: #EEE;
+			}
+			
+			
+			
+		</style>
+	</head>
+				
+	<h:body>
+		
+		
+		
+		<ui:composition template="/layouts/commonLayout.xhtml">
+			<ui:define name="content">
+				<div class="full-wrapper new-movie-page">
+					<div class="form-container">
+						<div id="new-movie-form" class="login-page-form">
+							<h3 class="new-movie-form-title form-title">Movie List</h3>
+								<h:form name="menu">
+									<h:dataTable value="#{movies.movies}" var="o" styleClass="order-table" headerClass="order-table-header" rowClasses ="order-table-odd, order-table-even">
+										<h:column>
+											<f:facet name="header">Title</f:facet>
+											#{o.title}
+										</h:column>
+										
+										<h:column>
+											<f:facet name="header">Released Date</f:facet>
+											#{o.releaseDate}
+										</h:column>
+										
+										<h:column>
+											<f:facet name="header">Duration</f:facet>
+											#{o.duration}
+										</h:column>
+										
+										<h:column>
+											<f:facet name="header">Content Rating</f:facet>
+											#{o.contentRating}
+										</h:column>
+									
+									</h:dataTable>
+								</h:form>
+						</div>
+					</div>
+				</div>
+			</ui:define>
+		</ui:composition>
+	</h:body>
+</html>
+
+
+

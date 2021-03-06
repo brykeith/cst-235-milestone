@@ -14,14 +14,14 @@
 						<h3 class="new-movie-form-title form-title">New Movie!</h3>
 						<h:form name="new-movie-form">
 							<div class="form-input-label">Movie Title:</div>
-							<h:inputText required="true" value="" a:placeholder="Movie Title"/>
+							<h:inputText required="true" value="#{movie.title}" a:placeholder="Movie Title"/>
 							<div class="form-input-label">Year:</div>
-							<h:inputText required="true" value="" a:placeholder="Year"/>
+							<h:inputText required="true" value="#{movie.releaseDate}" a:placeholder="Year"/>
 							<div class="form-input-label">Duration:</div>
-							<h:inputText required="true" value="" a:placeholder="Duration"/>
+							<h:inputText required="true" value="#{movie.duration}" a:placeholder="Duration"/>
 							<div class="form-input-label">Rating:</div>
-							<h:inputText required="true" value="" a:placeholder="Rating"/>
-							<h:commandButton class="submit-button" action="#"
+							<h:inputText required="true" value="#{movie.contentRating}" a:placeholder="Rating"/>
+							<h:commandButton class="submit-button" action="#{newMovieFormController.onSubmit()}"
 								value="Create" />
 						</h:form>
 					</div>
