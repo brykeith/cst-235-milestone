@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:ui="http://java.sun.com/jsf/facelets"
-    xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
-    
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
 <h:body>
 	<ui:composition template="/layouts/commonLayout.xhtml">
 		<ui:define name="content">
@@ -14,15 +14,25 @@
 						<h3 class="new-movie-form-title form-title">New Movie!</h3>
 						<h:form name="new-movie-form">
 							<div class="form-input-label">Movie Title:</div>
-							<h:inputText required="true" value="#{movie.title}" a:placeholder="Movie Title"/>
+							<h:inputText required="true" value="#{movie.title}"
+								a:placeholder="Movie Title" />
+							<div class="form-input-label">Director:</div>
+							<h:inputText required="true" value="#{movie.director}"
+								a:placeholder="Director" />
 							<div class="form-input-label">Year:</div>
-							<h:inputText required="true" value="#{movie.releaseDate}" a:placeholder="Year"/>
+							<h:inputText required="true" value="#{movie.releaseDate}"
+								a:placeholder="Year" />
 							<div class="form-input-label">Duration:</div>
-							<h:inputText required="true" value="#{movie.duration}" a:placeholder="Duration"/>
+							<h:inputText required="true" value="#{movie.duration}"
+								a:placeholder="Duration" />
 							<div class="form-input-label">Rating:</div>
-							<h:inputText required="true" value="#{movie.contentRating}" a:placeholder="Rating"/>
-							<h:commandButton class="submit-button" action="#{newMovieFormController.onSubmit()}"
-								value="Create" />
+							<h:inputText required="true" value="#{movie.contentRating}"
+								a:placeholder="Rating" />
+							<div class="form-input-label">Synopsis:</div>
+							<h:inputText required="true" value="#{movie.synopsis}"
+								a:placeholder="Synopsis" />
+							<h:commandButton class="submit-button"
+								action="#{newMovieFormController.onSubmit()}" value="Create" />
 						</h:form>
 					</div>
 				</div>
