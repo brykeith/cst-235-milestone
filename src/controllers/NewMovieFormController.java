@@ -23,7 +23,7 @@ public class NewMovieFormController {
 
 		ds.movieAdd(m);
 		// use for testing
-		System.out.println("Title: "+m.getTitle()+" Year: "+m.getReleaseDate()+" Duration: "+m.getDuration()+" Rating: "+m.getContentRating());
+		System.out.println("ID: "+m.getMovieID()+ " Title: "+m.getTitle()+" Director: "+m.getDirector()+" Year: "+m.getReleaseDate()+" Duration: "+m.getDuration()+" Rating: "+m.getContentRating()+" Synopsis: "+m.getSynopsis());
 
 		// puts Movie object into POST request
 		FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("movie", m);
