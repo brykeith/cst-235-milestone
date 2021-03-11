@@ -219,13 +219,15 @@ public class DatabaseService {
 		rs = stmt.executeQuery("Select * from movie_store.movie");
 
 		// process the rows in the result set
-		while (rs.next()) {
-			System.out.println("Title: " + rs.getString("TITLE") + " Year: " + rs.getString("YEAR") + " Duration: "
-					+ rs.getString("DURATION") + " Rating: " + rs.getString("RATING"));
-			Movie m = new Movie(rs.getString("TITLE"), rs.getString("DURATION"), rs.getString("YEAR"),
-					rs.getString("RATING"));
-			everyone.add(m);
-		}
+
+		// **needs to be updated to accept new movie fields**
+//		while (rs.next()) {
+//			System.out.println("Title: " + rs.getString("TITLE") + " Year: " + rs.getString("YEAR") + " Duration: "
+//					+ rs.getString("DURATION") + " Rating: " + rs.getString("RATING"));
+//			Movie m = new Movie(rs.getString("TITLE"), rs.getString("DURATION"), rs.getString("YEAR"),
+//					rs.getString("RATING"));
+//			everyone.add(m);
+//		}
 
 		// close connection
 		rs.close();
