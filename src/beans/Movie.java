@@ -13,8 +13,9 @@ public class Movie {
 	public String contentRating; // this is the audience rating. Example: R, PG, PG-13
 	public String synopsis;
 
+	
 	public Movie() {
-		this.movieID = this.getMovieID();
+		this.movieID = 0;
 		this.title = this.getTitle();
 		this.director = this.getDirector();
 		this.duration = this.getDuration();
@@ -26,6 +27,18 @@ public class Movie {
 	public Movie(int movieID, String title, String director, String duration, String releaseDate, String contentRating,
 			String synopsis) {
 		this.movieID = movieID;
+		this.title = title;
+		this.director = director;
+		this.duration = duration;
+		this.releaseDate = releaseDate;
+		this.contentRating = contentRating;
+		this.synopsis = synopsis;
+
+	}
+	
+	public Movie(String title, String director, String duration, String releaseDate, String contentRating,
+			String synopsis) {
+		this.movieID = 0;
 		this.title = title;
 		this.director = director;
 		this.duration = duration;

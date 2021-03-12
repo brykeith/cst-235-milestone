@@ -183,13 +183,15 @@ public class DatabaseService {
 		System.out.println("Connection is successful");
 
 		// create a SQL statement
-		pstmt = c
-				.prepareStatement("insert into movie_store.movie set TITLE=?, RATING=?, DURATION=?, YEAR=?, USER_ID=?");
+		pstmt = c.prepareStatement("insert into movie_store.movie set TITLE=?, RATING=?, DURATION=?, YEAR=?, DIRECTOR=?, SYNOPSIS=?");
+		
 		pstmt.setString(1, m.getTitle());
 		pstmt.setString(2, m.getContentRating());
 		pstmt.setString(3, m.getDuration());
 		pstmt.setString(4, m.getReleaseDate());
-		pstmt.setInt(5, 0);
+		pstmt.setString(5, m.getDirector());
+		pstmt.setString(6, m.getSynopsis());
+		
 
 		// execute the statement
 		rowsAffected = pstmt.executeUpdate();
@@ -220,14 +222,14 @@ public class DatabaseService {
 
 		// process the rows in the result set
 
-		// **needs to be updated to accept new movie fields**
-//		while (rs.next()) {
-//			System.out.println("Title: " + rs.getString("TITLE") + " Year: " + rs.getString("YEAR") + " Duration: "
-//					+ rs.getString("DURATION") + " Rating: " + rs.getString("RATING"));
-//			Movie m = new Movie(rs.getString("TITLE"), rs.getString("DURATION"), rs.getString("YEAR"),
-//					rs.getString("RATING"));
-//			everyone.add(m);
-//		}
+
+		while (rs.next()) {
+			System.out.println("Movie ID: "+rs.getInt("MOVIE_ID")+" Title: " + rs.getString("TITLE") + " Year: " + rs.getString("YEAR") + " Duration: "
+					+ rs.getString("DURATION") + " Rating: " + rs.getString("RATING"));
+			Movie m = new Movie(rs.getInt("MOVIE_ID"), rs.getString("TITLE"), rs.getString("DIRECTOR"), rs.getString("DURATION"), rs.getString("YEAR"),
+					rs.getString("RATING"), rs.getString("SYNOPSIS"));
+			everyone.add(m);
+		}
 
 		// close connection
 		rs.close();
@@ -235,6 +237,128 @@ public class DatabaseService {
 		c.close();
 
 		return everyone;
+	}
+	
+	public int addMovieID(Movie m) throws SQLException, ClassNotFoundException {
+		int movieID = 0;
+		
+		// db work
+		Class.forName("com.mysql.jdbc.Driver");
+		c = DriverManager.getConnection(dbURL, user, password);
+		System.out.println("Connection is successful");
+		
+		pstmt = c.prepareStatement("Select MOVIE_ID from movie_store.movie where TITLE=? and DIRECTOR=?");
+		pstmt.setString(1, m.getTitle());
+		pstmt.setString(2, m.getDirector());
+		
+		rs = pstmt.executeQuery();
+		
+		while(rs.next()) {
+			movieID = rs.getInt("MOVIE_ID");
+		}
+		
+		
+		System.out.println("Movie ID being Added: "+movieID);
+		
+		// close connection
+		rs.close();
+		pstmt.close();
+		c.close();
+		
+		return movieID;
+	}
+	
+	public Movie displayMovie(int MovieID) throws SQLException, ClassNotFoundException {
+		
+		//creates blank movie object
+		Movie m = new Movie();
+		
+		// db work
+		Class.forName("com.mysql.jdbc.Driver");
+		c = DriverManager.getConnection(dbURL, user, password);
+		System.out.println("Connection is successful");
+		
+		pstmt = c.prepareStatement("Select * from movie_store.movie where MOVIE_ID=?");
+		pstmt.setInt(1, MovieID);
+		
+		//sets data fields to found queried movie
+		while(rs.next()) {
+			m.setMovieID(rs.getInt("MOVIE_ID"));
+			m.setTitle(rs.getString("TITLE"));
+			m.setDirector(rs.getString("DIRECTOR"));
+			m.setDuration(rs.getString("DURATION"));
+			m.setReleaseDate(rs.getString("YEAR"));
+			m.setContentRating(rs.getString("RATING"));
+			m.setSynopsis(rs.getString("SYNOPSIS"));	
+		}
+		
+		//executes query
+		rs = pstmt.executeQuery();
+		
+		//closes connection
+		rs.close();
+		pstmt.close();
+		c.close();
+		
+		//returns movie object
+		return m;
+	}
+	
+	public int deleteMovie(int MovieID) throws SQLException, ClassNotFoundException {
+		int numberOfRowsAffected = 0;
+		
+		// db work
+		Class.forName("com.mysql.jdbc.Driver");
+		c = DriverManager.getConnection(dbURL, user, password);
+		System.out.println("Connection is successful");
+	
+		// create a SQL statement
+		pstmt = c.prepareStatement("delete from movie_store.movie where MOVIE_ID = ?");
+		pstmt.setInt(1, MovieID);
+	
+		// execute the statement
+		rowsAffected = pstmt.executeUpdate();
+	
+		// process the rows in the result set
+		System.out.println("Rows deleted: " + rowsAffected);
+	
+		// close connection
+		pstmt.close();
+		c.close();
+
+		return numberOfRowsAffected;
+	}
+	
+	public int updateMovie(int MovieID, Movie m) throws SQLException, ClassNotFoundException {
+		int numberOfRowsAffected = 0;
+		
+		// db work
+		Class.forName("com.mysql.jdbc.Driver");
+		c = DriverManager.getConnection(dbURL, user, password);
+		System.out.println("Connection is successful");
+
+		// create a SQL statement
+		pstmt = c.prepareStatement("update movie_store.movie set TITLE=?, DIRECTOR=?, DURATION=?, YEAR=?, RATING=?, SYNOPSIS=? where MOVIE_ID=?");
+		pstmt.setString(1, m.getTitle());
+		pstmt.setString(2, m.getDirector());
+		pstmt.setString(3, m.getDuration());
+		pstmt.setString(4, m.getReleaseDate());
+		pstmt.setString(5, m.getContentRating());
+		pstmt.setString(6, m.getSynopsis());
+		pstmt.setInt(7, MovieID);
+
+		// execute the statement
+		rowsAffected = pstmt.executeUpdate();
+
+		// process the rows in the result set
+		System.out.println("Rows updated: " + rowsAffected);
+
+		// close connection
+		pstmt.close();
+		c.close();
+		
+		
+		return numberOfRowsAffected;
 	}
 
 }

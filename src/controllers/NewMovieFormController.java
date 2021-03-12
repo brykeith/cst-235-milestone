@@ -22,6 +22,9 @@ public class NewMovieFormController {
 		DatabaseService ds = new DatabaseService();
 
 		ds.movieAdd(m);
+		int tempMovieID = ds.addMovieID(m);
+		m.setMovieID(tempMovieID);
+		
 		// use for testing
 		System.out.println("ID: "+m.getMovieID()+ " Title: "+m.getTitle()+" Director: "+m.getDirector()+" Year: "+m.getReleaseDate()+" Duration: "+m.getDuration()+" Rating: "+m.getContentRating()+" Synopsis: "+m.getSynopsis());
 
