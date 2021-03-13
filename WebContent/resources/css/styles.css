@@ -107,12 +107,7 @@ form {
 	width: 300px;
 }
 
-.header-logo{
-	position: absolute;
-	top: 10px;
-	left: -1px;
-	width: 300px;
-}
+
 
 .full-wrapper {
   height: 100%;
@@ -232,6 +227,13 @@ form {
 	}
 }
 
+.order-table{
+	border:1px black solid;
+}
+
+.order-table-odd{
+	background: #EEE;
+}
 
 
 

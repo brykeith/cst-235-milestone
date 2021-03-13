@@ -1,0 +1,156 @@
+@charset "ISO-8859-1";
+
+:root {
+  --header-line-height: 9px;
+}
+
+
+.header-logo{
+	position: absolute;
+	top: -2px;
+	left: -1px;
+	width: 300px;
+	z-index: 100;
+}
+
+.header__line{
+	width: 100vw;
+	height: var(--header-line-height);
+}
+
+.header__line--1{
+	background-color: #e08554;
+}
+
+.header__line--2{
+	background-color: #db7259;
+}
+
+.header__line--3{
+	background-color: #d65f5d;
+}
+
+.header__line--4{
+	background-color: #e08554;
+}
+
+.header__line--5{
+	background-color: #e6974f;
+}
+
+.header__line--6{
+	background-color: #ebaa4b;
+}
+
+
+
+.nav--desktop{
+	position: absolute;
+	top: -100px;
+	right: 0;
+	z-index: 200;
+	height: 54px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	transition-property: top ;
+	transition-duration: .4s;
+	transition-timing-function: ease-in;
+}
+
+.nav--mobile{
+	position: absolute;
+	top: 0;
+	right: -300px;
+	z-index: 200;
+	height: 100vh;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #e08554;
+	transition-property: right ;
+	transition-duration: .2s;
+	transition-timing-function: ease-in;
+}
+
+.nav--mobile.active{
+	right: 0;
+}
+
+.nav__link{
+	color: #fff;
+	letter-spacing: 1px;
+	font-weight: bold;	
+	padding: 12px 20px;
+	transition-property: background-color color ;
+	transition-duration: .2s;
+	transition-timing-function: ease-in;
+}
+
+.nav--mobile .nav__link{
+	margin: 8px 0;
+}
+
+.nav__link:hover{
+	background-color: white;
+	color: #e08554;
+}
+
+
+
+
+/* START HAMB BUTTON */
+.hamburger-button{
+	z-index: 300;
+  width: 55px;
+  height: 50px;
+  padding: 10px;
+  background-color: #262626;
+  border-radius: 10px;
+  position: fixed;
+  top: 3px;
+  right: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  transition-property: right ;
+	transition-duration: .4s;
+	transition-timing-function: ease-in;
+}
+
+.hb__line{
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  transition: all .8s;
+}
+
+.active .line-1{
+transform: rotateZ(-405deg) translate(-8px, 6px);}
+
+.active .line-2{
+  opacity: 0;
+}
+
+.active .line-3{
+  transform: rotateZ(45deg) translate(-8px, -6px);
+}
+
+
+
+
+@media only screen and (min-width: 875px){
+	.nav--desktop{
+		top: 0;
+	}
+	
+	.hamburger-button{
+		right: -100px;
+	}
+}
+
+
