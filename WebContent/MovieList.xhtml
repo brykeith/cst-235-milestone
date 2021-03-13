@@ -12,7 +12,7 @@
 			<ui:define name="content">
 				<div class="full-wrapper new-movie-page">
 					<div class="form-container">
-						<div id="new-movie-form" class="login-page-form">
+						<div id="new-movie-form" class="form">
 							<h3 class="new-movie-form-title form-title">Movie List</h3>
 								<h:form name="menu">
 									<h:dataTable value="#{movies.movies}" var="o" styleClass="order-table" headerClass="order-table-header" rowClasses ="order-table-odd, order-table-even">
@@ -42,6 +42,18 @@
 										</h:column>
 									
 									</h:dataTable>
+									<div class="input-id-section">
+										<div class="form-input-label">Movie ID:</div>
+										<h:inputText id="movie-list-id-input" class="movie-list-id-input" value="#"/>
+									</div>
+									<div class="button-set">
+										<h:commandButton class="crud-button crud-button--view" action="#"
+										value="VIEW" />
+										<h:commandButton class="crud-button crud-button--edit" action="#"
+										value="EDIT" />
+										<h:commandButton class="crud-button crud-button--delete" action="#"
+										value="DELETE" />
+									</div>
 										
 								</h:form>
 						</div>

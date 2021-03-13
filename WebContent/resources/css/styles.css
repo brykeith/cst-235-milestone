@@ -107,8 +107,6 @@ form {
 	width: 300px;
 }
 
-
-
 .full-wrapper {
   height: 100%;
   width: 100%;
@@ -129,6 +127,22 @@ form {
 }
 
 .login-page-form {
+  height: auto;
+  max-height: 100%;
+  overflow: scroll;
+  padding: 30px;
+  width: 300px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
+
+}
+
+.form {
   height: auto;
   max-height: 100%;
   overflow: scroll;
@@ -204,6 +218,82 @@ form {
 }
 
 
+.order-table{
+	border:1px black solid;
+}
+
+.order-table-odd{
+	background: #EEE;
+}
+
+
+/* START CRUD FORM */
+
+.button-set{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.button-set .crud-button{
+	width: 80px;
+	height: 24px;
+	background: rgba(255, 255, 255, 0.4);
+	border: 1px solid #fff;
+	cursor: pointer;
+	color: #8387a1;
+	font-family: "Exo", sans-serif;
+	font-size: 16px;
+	margin-top: 30px;
+	transition: all 0.3s ease-in-out;
+}
+
+.input-id-section .form-input-label{
+	width: 80px;
+	height: 24px;
+}
+
+.input-id-section{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.movie-list-id-input{
+  width: 100px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+  color: #383536;
+  font-family: "Exo", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  box-shadow: 0 0 .2rem 0 rgba(0, 0, 0, 0.3);
+  
+}
+
+.movie-list-id-input:focus{
+  transition: all 0.3s ease-in;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 1);
+  box-shadow: 0 0 .3rem 0 rgba(0, 0, 0, 0.5);
+
+}
+
+.button-set .crud-button{
+	margin: 0 8px;
+}
+
+.button-set .crud-button:hover{
+  background: rgba(255, 255, 255, 0.9);
+}
+
+
+
+
 @media only screen and (min-width: 500px) {
   .login-page-form {
     min-width: 450px;
@@ -216,6 +306,10 @@ form {
     width: 325px;
   }
   
+  .form {
+    min-width: 450px;
+  }
+  
 	.form-input-label{
 
 	width: 325px;
@@ -226,20 +320,5 @@ form {
 	  font-size: 48px;
 	}
 }
-
-.order-table{
-	border:1px black solid;
-}
-
-.order-table-odd{
-	background: #EEE;
-}
-
-
-
-
-
-
-
 
 
