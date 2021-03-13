@@ -13,26 +13,26 @@
 					<div id="new-movie-form" class="form update-movie__form">
 						<h3 class="form-title">Update Movie!</h3>
 						<h:form name="new-movie-form">
-							<div class="form-input-label">Movie Title:</div>
-							<h:inputText required="true" value="#"
+							<div class="form-input-label">Movie Title: #{movie.title}</div>
+							<h:inputText required="true" value="#{movie.title}"
 								a:placeholder="Movie Title" />
-							<div class="form-input-label">Director:</div>
-							<h:inputText required="true" value="#"
+							<div class="form-input-label">Director: #{movie.director}</div>
+							<h:inputText required="true" value="#{movie.director}"
 								a:placeholder="Director" />
-							<div class="form-input-label">Year:</div>
-							<h:inputText required="true" value="#"
+							<div class="form-input-label">Year: #{movie.releaseDate}</div>
+							<h:inputText required="true" value="#{movie.releaseDate}"
 								a:placeholder="Year" />
-							<div class="form-input-label">Duration:</div>
-							<h:inputText required="true" value="#"
+							<div class="form-input-label">Duration: #{movie.duration}</div>
+							<h:inputText required="true" value="#{movie.duration}"
 								a:placeholder="Duration" />
-							<div class="form-input-label">Rating:</div>
-							<h:inputText required="true" value="#"
+							<div class="form-input-label">Rating: #{movie.contentRating}</div>
+							<h:inputText required="true" value="#{movie.contentRating}"
 								a:placeholder="Rating" />
-							<div class="form-input-label">Synopsis:</div>
-							<h:inputText required="true" value="#"
+							<div class="form-input-label">Synopsis: #{movie.synopsis}</div>
+							<h:inputText required="true" value="#{movie.synopsis}"
 								a:placeholder="Synopsis" />
 							<h:commandButton class="submit-button"
-								action="#" value="UPDATE!" />
+								action="#{movieChangeController.OnUpdateMovieSubmit()}" value="UPDATE!" />
 						</h:form>
 					</div>
 				</div>

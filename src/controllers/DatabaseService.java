@@ -212,7 +212,7 @@ public class DatabaseService {
 		// db work
 		Class.forName("com.mysql.jdbc.Driver");
 		c = DriverManager.getConnection(dbURL, user, password);
-		System.out.println("Connection is successful");
+		System.out.println("Read All Connection is successful");
 
 		// create a SQL statement
 		stmt = c.createStatement();
@@ -224,8 +224,8 @@ public class DatabaseService {
 
 
 		while (rs.next()) {
-			System.out.println("Movie ID: "+rs.getInt("MOVIE_ID")+" Title: " + rs.getString("TITLE") + " Year: " + rs.getString("YEAR") + " Duration: "
-					+ rs.getString("DURATION") + " Rating: " + rs.getString("RATING"));
+			/*System.out.println("Movie ID: "+rs.getInt("MOVIE_ID")+" Title: " + rs.getString("TITLE") + " Year: " + rs.getString("YEAR") + " Duration: "
+					+ rs.getString("DURATION") + " Rating: " + rs.getString("RATING"));*/
 			Movie m = new Movie(rs.getInt("MOVIE_ID"), rs.getString("TITLE"), rs.getString("DIRECTOR"), rs.getString("DURATION"), rs.getString("YEAR"),
 					rs.getString("RATING"), rs.getString("SYNOPSIS"));
 			everyone.add(m);
@@ -245,7 +245,7 @@ public class DatabaseService {
 		// db work
 		Class.forName("com.mysql.jdbc.Driver");
 		c = DriverManager.getConnection(dbURL, user, password);
-		System.out.println("Connection is successful");
+		System.out.println("Add Movie ID Connection is successful");
 		
 		pstmt = c.prepareStatement("Select MOVIE_ID from movie_store.movie where TITLE=? and DIRECTOR=?");
 		pstmt.setString(1, m.getTitle());
@@ -270,16 +270,21 @@ public class DatabaseService {
 	
 	public Movie displayMovie(int MovieID) throws SQLException, ClassNotFoundException {
 		
+		
 		//creates blank movie object
 		Movie m = new Movie();
 		
 		// db work
 		Class.forName("com.mysql.jdbc.Driver");
 		c = DriverManager.getConnection(dbURL, user, password);
-		System.out.println("Connection is successful");
+		System.out.println("Display Movie Connection is successful");
 		
 		pstmt = c.prepareStatement("Select * from movie_store.movie where MOVIE_ID=?");
+		
 		pstmt.setInt(1, MovieID);
+		
+		//executes query
+		rs = pstmt.executeQuery();
 		
 		//sets data fields to found queried movie
 		while(rs.next()) {
@@ -292,8 +297,6 @@ public class DatabaseService {
 			m.setSynopsis(rs.getString("SYNOPSIS"));	
 		}
 		
-		//executes query
-		rs = pstmt.executeQuery();
 		
 		//closes connection
 		rs.close();
@@ -310,7 +313,7 @@ public class DatabaseService {
 		// db work
 		Class.forName("com.mysql.jdbc.Driver");
 		c = DriverManager.getConnection(dbURL, user, password);
-		System.out.println("Connection is successful");
+		System.out.println("Delete Movie Connection is successful");
 	
 		// create a SQL statement
 		pstmt = c.prepareStatement("delete from movie_store.movie where MOVIE_ID = ?");
@@ -335,7 +338,7 @@ public class DatabaseService {
 		// db work
 		Class.forName("com.mysql.jdbc.Driver");
 		c = DriverManager.getConnection(dbURL, user, password);
-		System.out.println("Connection is successful");
+		System.out.println("Update Movie Connection is successful");
 
 		// create a SQL statement
 		pstmt = c.prepareStatement("update movie_store.movie set TITLE=?, DIRECTOR=?, DURATION=?, YEAR=?, RATING=?, SYNOPSIS=? where MOVIE_ID=?");

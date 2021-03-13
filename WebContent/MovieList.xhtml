@@ -44,12 +44,12 @@
 									</h:dataTable>
 									<div class="input-id-section">
 										<div class="form-input-label">Movie ID:</div>
-										<h:inputText id="movie-list-id-input" class="movie-list-id-input" value="#"/>
+										<h:inputText id="movie-list-id-input" class="movie-list-id-input" value="#{movieID}"/>
 									</div>
 									<div class="button-set">
-										<h:commandButton class="crud-button crud-button--view" action="#"
+										<h:commandButton class="crud-button crud-button--view" action="#{movieChangeController.OnViewMovieSubmit()}"
 										value="VIEW" />
-										<h:commandButton class="crud-button crud-button--edit" action="#"
+										<h:commandButton class="crud-button crud-button--edit" action="#{movieChangeController.PopulateUpdateMovieForm()}"
 										value="EDIT" />
 										<div class="crud-button crud-button--delete">Delete</div>
 									</div>
@@ -58,7 +58,7 @@
 									<!-- START DELETE CONFIRMATION POPUP -->
 									<div class="delete-confirmation">
 										<p>Are you sure you want to delete this movie?</p>
-										<h:commandButton class="delete-confirmation__button delete-confirmation__button--confirm" action="#"
+										<h:commandButton class="delete-confirmation__button delete-confirmation__button--confirm" action="#{movieChangeController.OnDeleteMovieSubmit()}"
 										value="DELETE" />										
 										<div class="delete-confirmation__button delete-confirmation__button--cancel">Cancel</div>
 									</div>
