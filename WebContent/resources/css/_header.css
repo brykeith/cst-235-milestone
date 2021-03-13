@@ -129,14 +129,14 @@
   transition: all .8s;
 }
 
-.active .line-1{
+.open .hb__line--1{
 transform: rotateZ(-405deg) translate(-8px, 6px);}
 
-.active .line-2{
+.open .hb__line--2{
   opacity: 0;
 }
 
-.active .line-3{
+.open .hb__line--3{
   transform: rotateZ(45deg) translate(-8px, -6px);
 }
 
