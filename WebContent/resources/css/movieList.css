@@ -1,0 +1,28 @@
+@charset "ISO-8859-1";
+
+form{
+	position: relative;
+}
+
+.delete-confirmation{
+	position: absolute;
+	width: 250px;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	padding: 30px;
+	background: #fff;
+	display: none;
+}
+
+.open.delete-confirmation{
+	display: block;
+}
+
+.delete-confirmation__button{
+	width: 100px;
+	padding: 10px 20px;
+	border: 1px solid black;
+	display: inline-block;
+	cursor: pointer;
+}

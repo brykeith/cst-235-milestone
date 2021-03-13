@@ -51,8 +51,16 @@
 										value="VIEW" />
 										<h:commandButton class="crud-button crud-button--edit" action="#"
 										value="EDIT" />
-										<h:commandButton class="crud-button crud-button--delete" action="#"
-										value="DELETE" />
+										<div class="crud-button crud-button--delete">Delete</div>
+									</div>
+									
+									
+									<!-- START DELETE CONFIRMATION POPUP -->
+									<div class="delete-confirmation">
+										<p>Are you sure you want to delete this movie?</p>
+										<h:commandButton class="delete-confirmation__button delete-confirmation__button--confirm" action="#"
+										value="DELETE" />										
+										<div class="delete-confirmation__button delete-confirmation__button--cancel">Cancel</div>
 									</div>
 										
 								</h:form>
