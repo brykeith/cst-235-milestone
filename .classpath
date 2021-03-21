@@ -20,5 +20,7 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/cdi-api-2.0.SP1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javax.faces-2.2.8-12.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-8.0.23.jar"/>
+	<classpathentry kind="lib" path="resteasy-jaxrs-3.15.0.Final.jar"/>
+	<classpathentry kind="lib" path="javax.ws.rs-api-2.0-m10.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

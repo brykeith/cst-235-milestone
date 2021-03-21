@@ -8,6 +8,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 
@@ -362,6 +363,31 @@ public class DatabaseService {
 		
 		
 		return numberOfRowsAffected;
+	}
+	
+	public List<Movie> searchFor(String name) throws SQLException {
+		List<Movie> mo = new ArrayList<Movie>();
+		//db work
+		c = DriverManager.getConnection(dbURL, user,password);
+		System.out.println("Connection is successful");
+		
+		//create a SQL statement
+		pstmt = c.prepareStatement("Select * from movie_store.movie where TITLE like ?");
+		pstmt.setString(1, "%"+name+"%");
+		
+		rs = pstmt.executeQuery();
+		
+		while(rs.next()) {
+			Movie m = new Movie(rs.getInt("MOVIE_ID"), rs.getString("TITLE"), rs.getString("DIRECTOR"), rs.getString("DURATION"), rs.getString("YEAR"),
+					rs.getString("RATING"), rs.getString("SYNOPSIS"));
+			mo.add(m);
+		}
+				
+		//close connection
+		rs.close();
+		pstmt.close();
+		c.close();
+		return mo;
 	}
 
 }
